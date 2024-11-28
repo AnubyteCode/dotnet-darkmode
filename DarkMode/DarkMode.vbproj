@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
     <OutputType>Library</OutputType>
     <MyType>Windows</MyType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-	  <PackageVersion>1.1.3</PackageVersion>
+    <PackageVersion>1.1.3</PackageVersion>
     <Authors>Ryan Bester</Authors>
     <PackageTags>darkmode, dotnet, dark</PackageTags>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
@@ -14,6 +14,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/ryanbester/dotnet-darkmode</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <ApplicationIcon>w98_monitor_moon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DocumentationFile>DarkMode.xml</DocumentationFile>
@@ -24,6 +25,9 @@
     <DocumentationFile>DarkMode.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="w98_monitor_moon.ico" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Update="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -51,16 +55,17 @@
     </None>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>
+      </PackagePath>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.2.241603">
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.2" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.9" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="../README.md" Pack="true" PackagePath="\"/>
+    <None Include="../README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
